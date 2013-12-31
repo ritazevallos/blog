@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+  get "posts/new"
+
+  match '/newpost', to: 'posts#new',          via: 'get'
   match '/about',   to: 'static_pages#about', via: 'get'
   match '/',        to: 'static_pages#home',  via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
