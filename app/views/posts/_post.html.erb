@@ -1,0 +1,14 @@
+<h1><%= link_to post.title, post %></h1>
+<% if current_user.admin? %>
+    <ul>
+      <li>
+        <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+      </li>
+      <li>
+        <%= link_to "edit", edit_post_path(post) %>
+      </li>
+    </ul>
+<% end %>
+<div class="content">
+  <%= post.content %>
+</div>
