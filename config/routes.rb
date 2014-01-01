@@ -1,5 +1,6 @@
 Blog::Application.routes.draw do
   get "posts/new"
+  resources :posts
 
   match '/newpost', to: 'posts#new',          via: 'get'
   match '/about',   to: 'static_pages#about', via: 'get'

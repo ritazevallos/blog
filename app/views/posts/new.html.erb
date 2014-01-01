@@ -1,4 +1,19 @@
 <% provide(:title, 'New Post') %>
 
 <h1>New Post</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@post) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.label :content %>
+        <%= f.text_area :content %>
+
+        <%= f.submit "Create post", class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>
