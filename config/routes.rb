@@ -1,10 +1,13 @@
 Blog::Application.routes.draw do
   get "posts/new"
   resources :posts
+  resources :sessions, only: [:new, :create, :destroy]
+  root 'static_pages#home'
 
+  match '/signin',  to: 'sessions#new',       via: 'get'
+  match '/signout', to: 'sessions#destroy',   via: 'delete'
   match '/newpost', to: 'posts#new',          via: 'get'
   match '/about',   to: 'static_pages#about', via: 'get'
-  match '/',        to: 'static_pages#home',  via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

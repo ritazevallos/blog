@@ -3,7 +3,12 @@
     <ul>
       <li><%= link_to "collection",   '#' %></li>
       <li><%= link_to "about rita zevallos", about_path %></li>
-      <li><%= link_to "new post", newpost_path %></li>
+      <% if signed_in? %>
+        <li><%= link_to "new post", newpost_path %></li>
+        <li><%= link_to "sign out", signout_path, method: "delete" %></li>
+      <% else %>
+        <li> <%= link_to "sign in", signin_path %></li>
+      <% end %>
     </ul>
   </nav>
 </footer>
