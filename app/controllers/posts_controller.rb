@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :admin_user,      only: [:new, :create, :edit, :update, :destroy]
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def new
@@ -20,17 +20,17 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    Post.friendly.find(params[:id]).destroy
     flash[:success] = "Post deleted."
     redirect_to posts_path
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     if @post.update_attributes(user_params)
       flash[:success] = "Post edited"
       redirect_to @post
