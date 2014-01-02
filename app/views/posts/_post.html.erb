@@ -10,5 +10,5 @@
     </ul>
 <% end %>
 <div class="content">
-  <%= post.content %>
+  <%= simple_format(post.content.html_safe) %>
 </div>
