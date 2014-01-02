@@ -1,14 +1,19 @@
 <% provide(:title, 'The Collection') %>
-<h1>the collection</h1>
 
-<%= will_paginate %>
+<row>
+  <div class="span8 offset2">
+    <h1>the collection</h1>
 
-<ul class="posts">
-  <% @posts.each do |post| %>
-    <li>
-        <%= render post %>
-    </li>
-  <% end %>
-</ul>
+    <%= will_paginate %>
 
-<%= will_paginate %>
+    <ul class="posts">
+      <% @posts.each do |post| %>
+          <li>
+            <%= render post %>
+          </li>
+      <% end %>
+    </ul>
+
+    <%= will_paginate %>
+  </div>
+</row>

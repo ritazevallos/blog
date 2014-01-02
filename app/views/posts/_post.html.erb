@@ -1,14 +1,20 @@
 <h1><%= link_to post.title, post %></h1>
-<% if signed_in? && current_user.admin? %>
-    <ul>
-      <li>
-        <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
-      </li>
-      <li>
-        <%= link_to "edit", edit_post_path(post) %>
-      </li>
-    </ul>
-<% end %>
+<div class="post_info">
+  <ul>
+    <li>
+      <%= post.created_at.strftime("%B %d, %Y") %>
+    </li>
+    <% if signed_in? && current_user.admin? %>
+    <li>
+      <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+    </li>
+    <li>
+      <%= link_to "edit", edit_post_path(post) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
 <div class="content">
   <%= simple_format(post.content.html_safe) %>
 </div>

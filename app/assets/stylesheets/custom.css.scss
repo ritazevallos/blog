@@ -1,5 +1,43 @@
 @import "bootstrap";
 
+/* universal */
+
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  border-bottom: 1px solid #eaeaea;
+  a{
+    color: dimgrey;
+    &:hover{
+      color: black;
+    }
+  }
+}
+
+h1, h2{
+  line-height: 1
+}
+
 
 /* mixins, variables, etc. */
 
@@ -25,9 +63,11 @@ $grayMediumLight: #eaeaea;
 /* footer */
 
 footer {
+  background-color:  white;
   margin-top: 45px;
   padding-top:5px;
   border-top: 1px solid #eaeaea;
+  padding-right: 50px;
 
   a {
     color: #555;
@@ -36,11 +76,11 @@ footer {
     }
   }
   ul {
-    flight: right;
+    float: right;
     list-style: none;
     li {
       float: left;
-      margin-left:10px;
+      margin-left:20px;
     }
   }
 }
@@ -88,4 +128,24 @@ input {
       border-bottom: 1px solid darkgrey;
     }
   }
+
+}
+
+.post_info {
+  width: 100%;
+  display: inline-block;
+  float: right;
+  li{
+    list-style: none;
+    border: none;
+    float:left;
+    padding: 0px 10px 10px 20px;
+    &:last-child{
+      border: none;
+    }
+  }
+}
+
+.content {
+  margin-top: 70px;
 }
