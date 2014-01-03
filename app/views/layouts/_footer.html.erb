@@ -4,7 +4,7 @@
       <li><%= link_to "collection", posts_path %></li>
       <li><%= link_to "about rita zevallos", about_path %></li>
       <% if signed_in? %>
-        <li><%= link_to "new post", newpost_path %></li>
+        <li><%= link_to "new post", new_path %></li>
         <li><%= link_to "sign out", signout_path, method: "delete" %></li>
       <% end %>
     </ul>

@@ -4,6 +4,9 @@
     <li>
       <%= post.created_at.strftime("%B %d, %Y") %>
     </li>
+    <li>
+      in <%= link_to post.category.title, post.category %>
+    </li>
     <% if signed_in? && current_user.admin? %>
     <li>
       <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>

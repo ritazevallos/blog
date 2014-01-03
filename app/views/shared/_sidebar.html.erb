@@ -1,0 +1,11 @@
+<aside class="span2">
+  <%= image_tag 'plant.png' %>
+  <section>
+    <h4>categories</h4>
+    <ul>
+        <% @categories.each do |cat| %>
+            <li><%= link_to cat.title, cat %></li>
+        <% end %>
+    </ul>
+  </section>
+</aside>

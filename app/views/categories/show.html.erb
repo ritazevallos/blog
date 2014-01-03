@@ -1,0 +1,23 @@
+<% provide(:title, @category.title) %>
+
+<div class="container">
+    <row>
+      <%= render 'shared/sidebar', categories: @categories %>
+      <div class="span8">
+
+        <h2> <%= @category.title %></h2>
+
+        <% if @category.posts.any? %>
+            <%= will_paginate @posts %>
+
+            <ul class="posts">
+              <%= render @posts %>
+            </ul>
+
+            <%= will_paginate @posts %>
+        <% else %>
+            No posts in this category.
+        <% end %>
+      </div>
+    </row>
+</div>

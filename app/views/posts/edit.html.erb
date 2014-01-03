@@ -1,19 +1,17 @@
-<% provide(:title, "Edit post: #{@post.title}") %>
-<h1>Edit post: <%= @post.title %></h1>
+<row>
+  <div class="span8 offset2">
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@post) do |f| %>
-        <%= render 'shared/error_messages' %>
+    <% provide(:title, "Edit post: #{@post.title}") %>
+    <h1>Edit post: <%= @post.title %></h1>
 
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+    <div class="row">
+      <div class="span6 offset3">
+        <%= form_for(@post) do |f| %>
+            <%= render 'fields', f: f %>
+        <% end %>
 
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-
-        <%= f.submit "Save changes", class: "btn btn-large" %>
-    <% end %>
+      </div>
+    </div>
 
   </div>
-</div>
+</row>

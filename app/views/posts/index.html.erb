@@ -1,8 +1,10 @@
 <% provide(:title, 'The Collection') %>
 
 <row>
-  <div class="span8 offset2">
-    <h1>the collection</h1>
+
+  <%= render 'shared/sidebar', categories: @categories %>
+  <div class="span8">
+    <h2>the collection</h2>
 
     <%= will_paginate %>
 

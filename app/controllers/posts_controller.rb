@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   before_action :signed_in_user,  only: [:new, :create, :edit, :update, :destroy]
   before_action :admin_user,      only: [:new, :create, :edit, :update, :destroy]
 
@@ -8,13 +9,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories = Category.all
   end
 
   def create
-    @post = Post.new(user_params)
+    @post = Post.new(post_params)
     if @post.save
       redirect_to @post
     else
+      @categories = Category.all
       render 'new'
     end
   end
@@ -41,12 +44,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 10)
+    @categories = Category.all
   end
 
   private
 
-  def user_params
-    params.require(:post).permit(:title, :content)
+  def post_params
+    params.require(:post).permit(:title, :content, :category_id)
   end
 
   # Before filters

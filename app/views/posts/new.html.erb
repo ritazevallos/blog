@@ -1,19 +1,12 @@
 <% provide(:title, 'New Post') %>
+<row>
+<div class="span8 offset2">
+  <h1>New Post</h1>
 
-<h1>New Post</h1>
-
-<div class="row">
-  <div class="span6 offset3">
     <%= form_for(@post) do |f| %>
-        <%= render 'shared/error_messages' %>
-
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-
-        <%= f.label :content %>
-        <%= f.text_area :content %>
-
-        <%= f.submit "Create post", class: "btn btn-default" %>
+        <%= render 'fields', f: f %>
     <% end %>
+
+
   </div>
-</div>
+</row>

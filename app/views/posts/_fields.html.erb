@@ -1,0 +1,13 @@
+<%= render 'shared/error_messages', object: f.object %>
+
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :content %>
+<%= f.text_area :content %>
+
+<%= f.label :category_id %>
+<%= f.collection_select :category_id, @categories, :id, :title%>
+<p><%= link_to 'New category', 'categories/new' %>    </p>
+
+<%= f.submit "Create post", class: "btn btn-default" %>
