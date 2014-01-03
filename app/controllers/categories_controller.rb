@@ -29,6 +29,9 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    Category.find(params[:id]).destroy
+    flash[:success] = "Category deleted."
+    redirect_to posts_path
   end
 
   private

@@ -6,7 +6,7 @@ namespace :db do
                          password: "festerina",
                          password_confirmation: "festerina",
                          admin: true)
-    Category.create!(title: "the collection")
+    Category.create!(title: "personal")
     Post.create!(title: "about rita zevallos",
                  content: "I am a twenty-year-old person living in various places and studying various things.",
                  category_id: 1)

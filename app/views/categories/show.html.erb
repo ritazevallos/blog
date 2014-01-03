@@ -6,6 +6,7 @@
       <div class="span8">
 
         <h2> <%= @category.title %></h2>
+        <p><%= link_to "delete category", @category, method: :delete, data: { confirm: "You sure?" } %></p>
 
         <% if @category.posts.any? %>
             <%= will_paginate @posts %>
