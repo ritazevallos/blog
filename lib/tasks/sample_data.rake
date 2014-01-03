@@ -7,8 +7,8 @@ namespace :db do
                          password_confirmation: "festerina",
                          admin: true)
     Category.create!(title: "the collection")
-    Post.create!(title: "Same test hahahahaa",
-                 content: "another sample",
+    Post.create!(title: "about rita zevallos",
+                 content: "I am a twenty-year-old person living in various places and studying various things.",
                  category_id: 1)
   end
 end
